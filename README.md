@@ -1,1 +1,1 @@
-# Data Types and Variables - Exercises 19.01.2017
+# Data Types and Variables - Exercise 19.01.2017
