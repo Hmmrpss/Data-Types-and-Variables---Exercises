@@ -17,7 +17,7 @@ namespace _3.Practice_Characters_and_Strings
             char secondRow = 'B';
             char thirdRow = 'y';
             char fourthRow = 'e';
-            string fifthRow = "I love Programming";
+            string fifthRow = "I love programming";
             Console.WriteLine(firstRow);
             Console.WriteLine(secondRow);
             Console.WriteLine(thirdRow);

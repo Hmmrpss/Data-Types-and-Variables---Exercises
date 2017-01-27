@@ -18,7 +18,6 @@ namespace _07.Exchange_Variable_Values
             int newFirst = secondVariable;
             int newSecond = firstVariable;
             Console.WriteLine("Before: \na = {0}\nb = {1}\nAfter:\na = {2}\nb = {3}", firstVariable, secondVariable, newFirst, newSecond);
-
         }
     }
 }

@@ -7,22 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Numerics;
-
 namespace _10.Centurieс_to_Nanoseconds
 {
     class Program
     {
         static void Main()
         {
-            byte centuries = byte.Parse(Console.ReadLine());
-            short years = (short)(centuries * 100);
-            int days = (int)(Math.Round(years * 365.2422));
-            int hours = (int)(days * 24);
-            uint minutes = (uint)(hours * 60);
-            ulong seconds = (ulong)(hours * 60);
-            ulong milliseconds = (ulong)(seconds * 60);
-            bigInteger microseconds = milliseconds * 60;
-            bigInteger nanoseconds = microseconds * 60;
+            int centuries = int.Parse(Console.ReadLine());
+            int years = (int)(centuries * TimeConstants.yearsInOneCenturies);
+            int days = (int)(years * TimeConstants.daysInOneYear);
+            long hours = (long)(days * TimeConstants.hoursInOneDay);
+            long minutes = (long)(hours * TimeConstants.minutesInOneHour);
+            long seconds = (long)(minutes * TimeConstants.secondsInOneMinute);
+            BigInteger milliseconds = (BigInteger)(seconds * TimeConstants.milliSecondsInOneSecond);
+            BigInteger microseconds = (BigInteger)(milliseconds * TimeConstants.microSecondsInOneMilliSecond);
+            BigInteger nanoseconds = (BigInteger)(microseconds * TimeConstants.nanoSecondsInOneMicroSecond);
             Console.WriteLine("{0} centuries = {1} years = {2} days = {3} hours = {4} minutes = {5} seconds = {6} milliseconds = {7} microseconds = {8} nanoseconds",
                 centuries,
                 years, 
@@ -34,5 +33,16 @@ namespace _10.Centurieс_to_Nanoseconds
                 microseconds,
                 nanoseconds);
         }
+    }
+    static class TimeConstants
+    {
+        public const byte yearsInOneCenturies = 100;
+        public const double daysInOneYear = 365.2422;
+        public const byte hoursInOneDay = 24;
+        public const byte minutesInOneHour = 60;
+        public const byte secondsInOneMinute = 60;
+        public const ushort milliSecondsInOneSecond = 1000;
+        public const ushort microSecondsInOneMilliSecond = 1000;
+        public const ushort nanoSecondsInOneMicroSecond = 1000;
     }
 }

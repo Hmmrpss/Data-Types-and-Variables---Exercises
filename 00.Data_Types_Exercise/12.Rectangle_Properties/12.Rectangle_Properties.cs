@@ -13,8 +13,8 @@ namespace _12.Rectangle_Properties
     {
         static void Main()
         {
-            int rectangleWidth = int.Parse(Console.ReadLine());
-            int rectangleHeidht = int.Parse(Console.ReadLine());
+            double rectangleWidth = double.Parse(Console.ReadLine());
+            double rectangleHeidht = double.Parse(Console.ReadLine());
             double rectanglePerimeter = 2 * (rectangleWidth + rectangleHeidht);
             double rectangleArea = rectangleWidth * rectangleHeidht;
             double rectangleDiagonal = Math.Sqrt(Math.Pow(rectangleWidth, 2) + Math.Pow(rectangleHeidht, 2));

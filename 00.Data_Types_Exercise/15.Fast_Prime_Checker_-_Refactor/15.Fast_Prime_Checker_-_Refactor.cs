@@ -14,7 +14,7 @@ namespace _15.Fast_Prime_Checker___Refactor
         static void Main()
         {
             int numberToCheck = int.Parse(Console.ReadLine());
-            for (int check = 0; check <= numberToCheck; check++)
+            for (int check = 2; check <= numberToCheck; check++)
             {
                 bool primeNumber = true;
                 for (int division = 2; division <= Math.Sqrt(check); division++)
@@ -25,8 +25,7 @@ namespace _15.Fast_Prime_Checker___Refactor
                         break;
                     }
                 }
-                Console.WriteLine("{0} is prime -> {1}", numberToCheck, primeNumber);
-
+                Console.WriteLine("{0} -> {1}", check, primeNumber);
             }
         }
     }

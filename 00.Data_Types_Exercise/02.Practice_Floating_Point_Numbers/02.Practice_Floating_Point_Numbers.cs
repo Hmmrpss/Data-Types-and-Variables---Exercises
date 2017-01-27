@@ -19,9 +19,6 @@ namespace _02.Practice_Floating_Point_Numbers
             Console.WriteLine(firstNumber);
             Console.WriteLine(secondNumber);
             Console.WriteLine(thirdNumber);
-
-
-
         }
     }
 }

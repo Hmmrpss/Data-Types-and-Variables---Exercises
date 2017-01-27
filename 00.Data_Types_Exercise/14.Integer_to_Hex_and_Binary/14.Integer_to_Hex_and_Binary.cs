@@ -16,10 +16,9 @@ namespace _14.Integer_to_Hex_and_Binary
         {
             int decimalNumber = int.Parse(Console.ReadLine());
             string hexadecimalNumber = (Convert.ToString(decimalNumber, 16));
-            string binaryNumber = (Convert.ToString(decimalNumber, 2);
-            Console.WriteLine(hexadecimalNumber.ToUpper);
+            string binaryNumber = (Convert.ToString(decimalNumber, 2));
+            Console.WriteLine(hexadecimalNumber.ToUpper());
             Console.WriteLine(binaryNumber);
-
         }
     }
 }

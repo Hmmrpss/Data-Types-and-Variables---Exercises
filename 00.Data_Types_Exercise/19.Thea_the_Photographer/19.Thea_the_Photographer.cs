@@ -11,23 +11,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _19.Thea_the_Photographer
+namespace _00.Data_Types_Exercise
 {
     class Program
     {
         static void Main()
         {
-            int allOfThePictures = int.Parse(Console.ReadLine());
-            int timeToFilterEverySinglePicture = int.Parse(Console.ReadLine()); //in seconds
-            int FilteredPictures = int.Parse(Console.ReadLine());//percentage of the total pictures that are considered “good” to be uploaded
-            int timeForUploadingAPictureToTheCloud = int.Parse(Console.ReadLine()); //in seconds
-            int timeForUploadingTheApprovedPictures = ((allOfThePictures * FilteredPictures)/100) * timeForUploadingAPictureToTheCloud;
-            int timeNeededInSeconds = (allOfThePictures * timeToFilterEverySinglePicture) + timeForUploadingTheApprovedPictures;
-            int seconds = Math.Round(timeNeededInSeconds /60);
-            int minutes = seconds / 60;
-            int hours = minutes /60;
-            int days = hours / 24;
-            Console.WriteLine("{0}:{1}:{2}:{3}", days, hours, minutes, seconds);
+            var allOfThePictures = long.Parse(Console.ReadLine()); //ammount of all the pictures she has tanken
+            var timeToFilterEverySinglePicture = long.Parse(Console.ReadLine()); //time to filter one pic (in seconds)
+            var percentOfFilteredPictures = double.Parse(Console.ReadLine());//percentage of the total pictures that are considered “good” to be uploaded
+            var timeForUploadingAPictureToTheCloud = long.Parse(Console.ReadLine()); //in seconds
+
+            var timeToFilterAllOfThePictures = (long)(timeToFilterEverySinglePicture * allOfThePictures); //time for filtering the pictures (in seconds) <----1
+            var filteredPictures = (long)(Math.Ceiling((allOfThePictures * percentOfFilteredPictures) / 100D)); //total filtered pictures
+            var timeForUploadingTheFilteredPictures = (long)(filteredPictures * timeForUploadingAPictureToTheCloud); //time for uploading the filtered pictures (in seconds) <----2
+            var totalTimeNeeded = (long)(timeToFilterAllOfThePictures + timeForUploadingTheFilteredPictures); //total time needed (in seconds)
+
+            /* //the judge is too picky for this one
+            var seconds = totalTimeNeeded % 60; //the time in seconds
+            var minutes = (totalTimeNeeded / 60) % 60; //the time in minutes
+            var hours = (totalTimeNeeded / 3600) % 60; //the time in hours
+            var days = (totalTimeNeeded / 86400) % 24; //the time in days
+             * 
+            var result = days.ToString("D1") + ":" + hours.ToString("D2") + ":" + minutes.ToString("D2") + ":" + seconds.ToString("D2");
+            Console.WriteLine(result);
+             */
+
+            TimeSpan time = TimeSpan.FromSeconds(totalTimeNeeded);
+            Console.WriteLine(time.ToString(@"d\:hh\:mm\:ss"));
         }
     }
 }
